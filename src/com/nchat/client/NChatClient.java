@@ -33,6 +33,7 @@ public class NChatClient {
 		}
 		
 		//Try to start connection on port (Execute.port).
+		System.out.println("Connecting to server (" + ip + ")...");
 		try{
 			connectionSocket = new Socket(address, Execute.port);
 		}catch(Exception e){
@@ -42,6 +43,7 @@ public class NChatClient {
 		}
 		
 		//Try to establish write connection with server.
+		System.out.println("Establishing communications...");
 		try{
 			output = new PrintWriter(connectionSocket.getOutputStream(), true);
 		}catch(IOException e){
@@ -57,6 +59,7 @@ public class NChatClient {
 			e.printStackTrace();
 		}
 		
+		System.out.println("Successfully connected to server (" + ip +")!");
 		while(stopClient==false){
 			
 			//Try to read from console input.

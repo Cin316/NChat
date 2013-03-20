@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 public class Execute {
 
-	public static final int port = 13131;
+	public static final int port = 13132;
 	public static String ip;
 
 	public static void main(String[] args) {

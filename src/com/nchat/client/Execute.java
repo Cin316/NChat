@@ -10,7 +10,7 @@ public class Execute {
 	public static void main(String[] args) {
 
 		ip = JOptionPane.showInputDialog("Enter the IP address of the server you would like to connect to.");
-
+		NChatClient client = new NChatClient(ip);
 	}
 
 }

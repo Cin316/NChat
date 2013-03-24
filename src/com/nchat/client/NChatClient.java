@@ -17,10 +17,11 @@ public class NChatClient {
 	boolean stopClient = false;
 	String chatMessage = "";
 	String serverMessage = "";
+	BufferedReader scan;
 	
 	public NChatClient(String ip){
 		
-		BufferedReader scan = new BufferedReader(new InputStreamReader(System.in));
+		scan = new BufferedReader(new InputStreamReader(System.in));
 		
 		InetAddress address = null;
 		//Get and verify IP address.
@@ -33,7 +34,7 @@ public class NChatClient {
 		}
 		
 		//Try to start connection on port (Execute.port).
-		System.out.println("Connecting to server (" + ip + ")...");
+		System.out.println("Connecting to server (" + ip + ") on port " + Execute.port +".");
 		try{
 			connectionSocket = new Socket(address, Execute.port);
 		}catch(Exception e){

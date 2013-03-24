@@ -84,6 +84,32 @@ public class NChatClient {
 			}
 			
 		}
+		
+		System.out.println("Exiting...");
+		
+		//Closes I/O with server
+		try{
+			output.close();
+			input.close();
+		}catch(IOException e){
+			System.out.println("Error closing communications with server.");
+			e.printStackTrace();
+		}
+		
+		//Closes Scanner.
+		try{
+			scan.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		//Closes socket with server.
+		try{
+			connectionSocket.close();
+		}catch(Exception e){
+			System.out.println("Error closing connection with server.");
+			e.printStackTrace();
+		}
 	}
 	
 }
